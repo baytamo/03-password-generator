@@ -112,9 +112,6 @@ generateMe.addEventListener("click", function () {
       });
     }
 
-    console.log(userArray);
-    console.log(passwordLength);
-
     // for loop to choose characters at random based on user preferences; at the end of this, a password will be generated
     for (var i = 0; i < passwordLength; i++) {
       var passwordString =
@@ -123,6 +120,7 @@ generateMe.addEventListener("click", function () {
     }
   }
 
+  // writes password to window above button
   var passwordHere = document.getElementById("password");
   passwordHere.textContent = thePassword.join("");
 });
