@@ -64,7 +64,6 @@ let special = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_"];
 // user chooses length with at least 8 and not more than 128 characters
 var passwordLength = 0;
 
-
 // program starts when user clicks button
 var generateMe = document.getElementById("generate");
 
@@ -104,20 +103,20 @@ generateMe.addEventListener("click", function () {
     numbers.forEach(function (numbers) {
       userArray.push(numbers);
     });
+  }
 
-    // special characters; if user chooses this, items will be pushed to new array
-    if (confirm("Would you like special characters in your password?")) {
-      special.forEach(function (special) {
-        userArray.push(special);
-      });
-    }
+  // special characters; if user chooses this, items will be pushed to new array
+  if (confirm("Would you like special characters in your password?")) {
+    special.forEach(function (special) {
+      userArray.push(special);
+    });
+  }
 
-    // for loop to choose characters at random based on user preferences; at the end of this, a password will be generated
-    for (var i = 0; i < passwordLength; i++) {
-      var passwordString =
-        userArray[Math.floor(Math.random() * userArray.length)];
-      thePassword.push(passwordString);
-    }
+  // for loop to choose characters at random based on user preferences; at the end of this, a password will be generated
+  for (var i = 0; i < passwordLength; i++) {
+    var passwordString =
+      userArray[Math.floor(Math.random() * userArray.length)];
+    thePassword.push(passwordString);
   }
 
   // writes password to window above button
