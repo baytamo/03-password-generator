@@ -68,7 +68,6 @@ var passwordLength = 0;
 var generateMe = document.getElementById("generate");
 
 generateMe.addEventListener("click", function () {
-  document.querySelector("button");
   var passwordLength = prompt(
     "How many characters would you like to use in your password? 8-128 characters allowed"
   );
@@ -122,4 +121,14 @@ generateMe.addEventListener("click", function () {
   // writes password to window above button
   var passwordHere = document.getElementById("password");
   passwordHere.textContent = thePassword.join("");
+
+
+  // clear button function
+  let clearPassword = document.getElementById("clearMe");
+
+  clearPassword.addEventListener("click", function () {
+   document.getElementById("password").textContent = "";
+  });
+
 });
+
