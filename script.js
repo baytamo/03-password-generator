@@ -68,15 +68,15 @@ var passwordLength = 0;
 var generateMe = document.getElementById("generate");
 
 generateMe.addEventListener("click", function () {
-  var passwordLength = prompt(
-    "How many characters would you like to use in your password? 8-128 characters allowed"
-  );
+  var passwordLength = prompt("How many characters would you like to use in your password? 8-128 characters allowed");
 
-  while (passwordLength < 8 || passwordLength > 128) {
+
+  while (passwordLength < 8 || passwordLength > 128 || isNaN(passwordLength))
+
+     {
     alert("Please choose a number between 8 and 128");
     var passwordLength = prompt(
-      "How many characters would you like to use in your password? 8-128 characters allowed"
-    );
+      "How many characters would you like to use in your password? 8-128 characters allowed");
   }
 
   // user choices will be recorded here in new arrays
