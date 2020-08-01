@@ -69,47 +69,59 @@ generateMe.addEventListener("click", function () {
   var passwordLength = prompt(
     "How many characters would you like to use in your password? 8-128 characters allowed"
   );
-  if (passwordLength == null || passwordLength == "") {
-      return;
+  while (passwordLength == null || passwordLength == "") {
+      var exit = confirm("Are you sure you want to exit?\nOK = yes, Cancel = no");
+      if (exit === true) {
+        return;
+      } else {
+        var passwordLength = prompt(
+          "How many characters would you like to use in your password?\n8-128 characters allowed");
+      }
     } 
 
   // while loop limits user input to a number between 8 and 128
   while (passwordLength < 8 || passwordLength > 128 || isNaN(passwordLength)) {
-    alert("Please choose a number between 8 and 128");
-    var passwordLength = prompt(
-      "How many characters would you like to use in your password? 8-128 characters allowed"
-    );
-    if (passwordLength == null || passwordLength == "") {
+    while (passwordLength == null || passwordLength == "") {
+      var exit = confirm("Are you sure you want to exit?\nOK = yes, Cancel = no");
+      if (exit === true) {
         return;
+      } else {
+        var passwordLength = prompt(
+          "How many characters would you like to use in your password?\n8-128 characters allowed");
       }
+    } 
+    alert("Try again!\nPlease choose a number between 8 and 128.");
+    var passwordLength = prompt(
+      "How many characters would you like to use in your password?\n8-128 characters allowed"
+    );
   }
 
   // user choices will be recorded here in new array
   let userArray = [];
 
   // lower case; if user chooses this, items will be pushed to new array
-  if (confirm("Would you like lower case letters in your password?")) {
+  if (confirm("Would you like lower case letters in your password?\nexample: a b c d e\nOK = yes, Cancel = no")) {
     lowerCase.forEach(function (lowerCase) {
       userArray.push(lowerCase);
     });
   }
 
   // upper case; if user chooses this, items will be pushed to new array
-  if (confirm("Would you like upper case letters in your password?")) {
+  if (confirm("Would you like upper case letters in your password?\nexample: A B C D E\nOK = yes, Cancel = no")) {
     upperCase.forEach(function (upperCase) {
       userArray.push(upperCase);
     });
   }
 
   // numbers; if user chooses this, items will be pushed to new array
-  if (confirm("Would you like numbers in your password?")) {
+  if (confirm("Would you like numbers in your password?\nexample: 1 2 3 4 5\nOK = yes, Cancel = no")) {
     numbers.forEach(function (numbers) {
       userArray.push(numbers);
     });
   }
 
   // special characters; if user chooses this, items will be pushed to new array
-  if (confirm("Would you like special characters in your password?")) {
+  if (confirm("Would you like special characters in your password?\n example: ! @ # $ %\nOK = yes, Cancel = no")) {
     special.forEach(function (special) {
       userArray.push(special);
     });
