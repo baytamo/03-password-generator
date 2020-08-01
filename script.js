@@ -69,7 +69,6 @@ generateMe.addEventListener("click", function () {
   var passwordLength = prompt(
     "How many characters would you like to use in your password? 8-128 characters allowed"
   );
-
   if (passwordLength == null || passwordLength == "") {
       return;
     } 
