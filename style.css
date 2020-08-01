@@ -13,8 +13,8 @@ body,
 }
 
 body {
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  background-color: #f9fbfd;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  background-image: linear-gradient(white, #FADBF8, #E500B9);
 }
 
 .wrapper {
@@ -116,7 +116,7 @@ button {
   text-align: center;
   margin-top: 10px;
   margin-bottom: 10px;
-  border: 2px dashed #c0c7cf;
+  border: 2px dotted #c0c7cf;
   border-radius: 6px;
   resize: none;
   overflow: hidden;
