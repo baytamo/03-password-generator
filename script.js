@@ -61,27 +61,25 @@ let numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
 
 let special = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_"];
 
-// user chooses length with at least 8 and not more than 128 characters
-var passwordLength = 0;
-
 // program starts when user clicks button
 var generateMe = document.getElementById("generate");
+var passwordLength = 0;
 
 generateMe.addEventListener("click", function () {
-  var passwordLength = prompt("How many characters would you like to use in your password? 8-128 characters allowed");
+  var passwordLength = prompt(
+    "How many characters would you like to use in your password? 8-128 characters allowed"
+  );
 
-
-  while (passwordLength < 8 || passwordLength > 128 || isNaN(passwordLength))
-
-     {
+  // while loop limits user input to a number between 8 and 128
+  while (passwordLength < 8 || passwordLength > 128 || isNaN(passwordLength)) {
     alert("Please choose a number between 8 and 128");
     var passwordLength = prompt(
-      "How many characters would you like to use in your password? 8-128 characters allowed");
+      "How many characters would you like to use in your password? 8-128 characters allowed"
+    );
   }
 
-  // user choices will be recorded here in new arrays
+  // user choices will be recorded here in new array
   let userArray = [];
-  let thePassword = [];
 
   // lower case; if user chooses this, items will be pushed to new array
   if (confirm("Would you like lower case letters in your password?")) {
@@ -111,7 +109,10 @@ generateMe.addEventListener("click", function () {
     });
   }
 
-  // for loop to choose characters at random based on user preferences; at the end of this, a password will be generated
+  // randomly generated characters will be pushed to this array
+  let thePassword = [];
+
+  // for loop to choose characters at random based on user preferences; generated characters are pushed into new array
   for (var i = 0; i < passwordLength; i++) {
     var passwordString =
       userArray[Math.floor(Math.random() * userArray.length)];
@@ -122,13 +123,10 @@ generateMe.addEventListener("click", function () {
   var passwordHere = document.getElementById("password");
   passwordHere.textContent = thePassword.join("");
 
-
   // clear button function
   let clearPassword = document.getElementById("clearMe");
 
   clearPassword.addEventListener("click", function () {
-   document.getElementById("password").textContent = "";
+    document.getElementById("password").textContent = "";
   });
-
 });
-
