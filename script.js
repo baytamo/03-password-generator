@@ -70,12 +70,19 @@ generateMe.addEventListener("click", function () {
     "How many characters would you like to use in your password? 8-128 characters allowed"
   );
 
+  if (passwordLength == null || passwordLength == "") {
+      return;
+    } 
+
   // while loop limits user input to a number between 8 and 128
   while (passwordLength < 8 || passwordLength > 128 || isNaN(passwordLength)) {
     alert("Please choose a number between 8 and 128");
     var passwordLength = prompt(
       "How many characters would you like to use in your password? 8-128 characters allowed"
     );
+    if (passwordLength == null || passwordLength == "") {
+        return;
+      }
   }
 
   // user choices will be recorded here in new array
