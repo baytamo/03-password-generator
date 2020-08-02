@@ -112,7 +112,7 @@ generateMe.addEventListener("click", function () {
   }
 
   // special characters; if user chooses this, items will be pushed to new array
-  if (confirm("Would you like special characters in your password?\n example: ! @ # $ %\nOK = yes, Cancel = no")) {
+  if (confirm("Would you like special characters in your password?\nexample: ! @ # $ %\nOK = yes, Cancel = no")) {
     special.forEach(function (special) {
       userArray.push(special);
     });
